@@ -79,11 +79,11 @@ double doCalcOneOperand(char* operator, double a) {
 char** infixToPostfix(char * formatMath) {
   char ** math = split(formatMath, "#");
   const int len = length(math);
-  printf("LEN: %d", len);
-  for(size_t i = 0; i < len; i++) {
-    printf("%s ", *(math + i));
-  }
-  printf("\n");
+  // printf("LEN: %d", len);
+  // for(size_t i = 0; i < len; i++) {
+  //   printf("%s ", *(math + i));
+  // }
+  // printf("\n");
   // printf("CASM");
   char ** postfix = malloc (len * sizeof(char*));
   int index = 0;
@@ -114,10 +114,10 @@ char** infixToPostfix(char * formatMath) {
   }
   free(s);
   postfix[index] = NULL;
-  for(size_t i = 0; i < index; i++) {
-    printf("%s ", postfix[i]);
-  }
-  printf("\n");
+  // for(size_t i = 0; i < index; i++) {
+  //   printf("%s ", postfix[i]);
+  // }
+  // printf("\n");
   return postfix;
 }
 
@@ -147,9 +147,9 @@ double calc(char** postfix) {
 
 double calculate(char * mathRegex) {
   char * trimMath = trimRegex(mathRegex);
-  printf("TRIM: %s\n", trimMath);
+  // printf("TRIM: %s\n", trimMath);
   char * formatMath = formatRegex(trimMath);
-  printf("FORMAT: %s\n", formatMath);
+  // printf("FORMAT: %s\n", formatMath);
   char ** postfixString = infixToPostfix(formatMath);
   double result = calc(postfixString);
   return result;

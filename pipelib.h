@@ -15,12 +15,12 @@ void parentProcessing(int* fds) {
   char outputString[INPUT_LENGTH];
   
   inputString = readFile(DATA_INPUT_FILE);
-  printf("INPUT: %s", inputString);
+  // printf("INPUT: %s", inputString);
   // send 
   write(*(fds + PIPE_WRITER_CODE), inputString, INPUT_LENGTH);
   wait(NULL);
   read(*(fds + PIPE_READER_CODE), outputString, INPUT_LENGTH);
-  printf("OUTPUT: %s\n", outputString);
+  // printf("OUTPUT: %s\n", outputString);
   close(*(fds + PIPE_READER_CODE));
   close(*(fds + PIPE_WRITER_CODE));
 

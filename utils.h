@@ -55,7 +55,7 @@ int isOperator(char* c) {
 
 char** split(char * math, const char * c) {
   // printf("%d", counter);
-  printf("CHAR: %c\n", c[0]);
+  // printf("CHAR: %c\n", c[0]);
   char ** result;
   int counter = 0;
   char * str = malloc(strlen(math) * sizeof(char));
